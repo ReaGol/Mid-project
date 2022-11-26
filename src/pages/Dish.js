@@ -17,7 +17,7 @@ function Dish(props) {
       try {
         setIsLoading(true);
         const { data } = await axios.get(
-          `https://6374aa1608104a9c5f856b46.mockapi.io/potluck/${params.DishId}`
+          `https://6374aa1608104a9c5f856b46.mockapi.io/potluck/${params.dishId}`
         );
         setDishData(data);
       } catch (e) {
@@ -37,7 +37,7 @@ function Dish(props) {
     try {
       setIsLoading(true);
       const { data } = await axios.put(
-        `https://6374aa1608104a9c5f856b46.mockapi.io/potluck/${params.DishId}`,
+        `https://6374aa1608104a9c5f856b46.mockapi.io/potluck/${params.dishId}`,
         {
           name,
           image,
@@ -58,7 +58,7 @@ function Dish(props) {
   const handleDeleteDish = async (id) => {
     try {
       const { data } = await axios.delete(
-        `https://6374aa1608104a9c5f856b46.mockapi.io/potluck/${params.DishId}`
+        `https://6374aa1608104a9c5f856b46.mockapi.io/potluck/${params.dishId}`
       );
       console.log(data);
       setDishData((prevState) =>
@@ -104,7 +104,7 @@ function Dish(props) {
               <h2>{dishData.name}</h2>
               <h2> {dishData.price}</h2>
             </span>
-            <img className='img' src={dishData.photo} alt={dishData.name} />
+            <img className='img' src={dishData.image} alt={dishData.name} />
             <span>
               <button
                 className='btn-delete'
