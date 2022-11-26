@@ -1,38 +1,114 @@
 .App {
-  text-align: center;
+  padding: 1rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  max-width: 620px;
+  margin: 0 auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.dishes_container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.dish {
+  margin: 1rem;
+  padding: 1rem;
+  border: solid 1px grey;
+  border-radius: 20px;
+  box-shadow: 10px 5px 5px grey;
 }
 
-.App-link {
-  color: #61dafb;
+.img {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  border: 1px solid transparent;
+  border-radius: 30px;
+
+}
+span {
+  display: flex;
+  justify-content: space-between;
 }
 
-@keyframes App-logo-spin {
-  from {
+.spin {
+  border: 10px solid #8A891A;
+  border-radius: 50%;
+  border-top: 10px solid #B0ADAC;
+  border-right: 10px solid #7B736C;
+  border-bottom: 10px solid #B0ADAC;
+  border-left: 10px solid #575859;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 1.5s linear infinite;
+  animation: spin 1.5s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
 }
+
+.btn-delete {
+  cursor: pointer;
+  margin-right: 50px;
+  padding: 2px 4px;
+  background-color: rgb(248, 211, 197);
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+button:hover {
+  box-shadow: 5px 1px 5px rgb(137, 157, 155);
+}
+
+/* .main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+} */
+
+/* img {
+  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+   height: 100%;
+} */
+
+p {
+  display: flex;
+  align-self: center;
+  font-size: 1.5rem;
+  color: beige;
+  text-shadow: 2px 2px 2px grey;
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 3rem;
+  color: rgb(8, 8, 8);
+  text-align: center;
+  text-shadow: 2px 2px 2px rgb(134, 133, 133);
+  
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-family: inherit;
+}
+
