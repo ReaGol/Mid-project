@@ -55,24 +55,24 @@ function Dish(props) {
     }
   };
 
-  const handleDeleteDish = async (id) => {
-    try {
-      const { data } = await axios.delete(
-        `https://6374aa1608104a9c5f856b46.mockapi.io/potluck/${params.dishId}`
-      );
-      console.log(data);
-      setDishData((prevState) =>
-        prevState.filter((Dish) => {
-          return Dish.id !== data.id;
-        })
-      );
-    } catch (e) {
-      setErrorMes(e.message);
-      setTimeout(() => {
-        setErrorMes(null);
-      }, 1500);
-    }
-  };
+  // const handleDeleteDish = async (id) => {
+  //   try {
+  //     const { data } = await axios.delete(
+  //       `https://6374aa1608104a9c5f856b46.mockapi.io/potluck/${params.dishId}`
+  //     );
+  //     console.log(data);
+  //     setDishData((prevState) =>
+  //       prevState.filter((Dish) => {
+  //         return Dish.id !== data.id;
+  //       })
+  //     );
+  //   } catch (e) {
+  //     setErrorMes(e.message);
+  //     setTimeout(() => {
+  //       setErrorMes(null);
+  //     }, 1500);
+  //   }
+  // };
 
   return (
     <div className='wrapper'>
@@ -89,7 +89,7 @@ function Dish(props) {
           placeholder='photo'
           onChange={({ target: { value } }) => setInputImg(value)}
         />
-        {isLoading && <h1 className='spin'>.</h1>}
+        {isLoading && <h1 className='spin'></h1>}
 
         <div className='Dishs_container'>
           <div className='Dish' key={dishData.id}>
@@ -102,24 +102,22 @@ function Dish(props) {
             </h3>
             <span>
               <h2>{dishData.name}</h2>
-              <h2> {dishData.price}</h2>
             </span>
             <img className='img' src={dishData.image} alt={dishData.name} />
             <span>
-              <button
+              {/* <button
                 className='btn-delete'
                 onClick={() => {
                   handleDeleteDish(dishData.id);
                 }}
               >
                 Delete
-              </button>
+              </button> */}
               {dishData.name} - {dishData.picked ? "picked" : "available"}
             </span>
           </div>
         </div>
       </div>
-      );
     </div>
   );
 }

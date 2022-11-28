@@ -33,7 +33,7 @@ console.log(user);
 
   return (
     <div className='container'>
-      <h1>Events</h1>
+      <h1>Hello {user}! pick an event</h1>
 
       {errorMes && <h2>{errorMes}</h2>}
       {isLoading && <h1 className='spin'></h1>}

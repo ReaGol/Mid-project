@@ -1,6 +1,7 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { UserContext } from "../App";
 import Dishes from "./Dishes";
 
 function Event(props) {
@@ -10,6 +11,7 @@ function Event(props) {
   //   const [inputImg, setInputImg] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [errorMes, setErrorMes] = useState(null);
+  const { user, setUser } = useContext(UserContext);
 
   useEffect(() => {
     console.log(params);
@@ -34,16 +36,57 @@ function Event(props) {
     fetchEventData();
   }, [params]);
 
+  // function to update event
+  const updateEventDish =async (dish, checked) => {
+     try {
+      setIsLoading(true);
+const users = [...eventData.users]
+      const currentUser = users.find(u => u.name == user)
+      if (!currentUser) {
+        users.push({name:user, stuff:[dish]})       
+      }
+      else {
+        if (checked) {
+          currentUser.stuff.push(dish)
+        }else {
+          currentUser.stuff = currentUser.stuff.filter(d => d !== dish)
+        }
+      } console.log(users);
+
+
+      const { data } = await axios.put(
+        `https://6374aa1608104a9c5f856b46.mockapi.io/events/${params.eventId}`,
+        {
+       ...eventData,
+       users
+        }
+      );
+       setEventData(data)
+    } catch (e) {
+      setErrorMes(e.message);
+      setTimeout(() => {
+        setErrorMes(null);
+      }, 5000);
+    } finally {
+      setIsLoading(false);
+    }
+
+   
+  }
+
+  const isChecked = (dish) =>eventData?.users?.flatMap(u => u.stuff).includes(dish)
+const isAvailableDish = (dish) =>!eventData?.users?.filter(u => u.name !== user).flatMap((u) => u.stuff).includes(dish);
+  
   return (
     <div className='wrapper'>
       <div className='App'>
         {errorMes && <h2>{errorMes}</h2>}
 
-        <input
+        {/* <input
           value={inputVal}
           placeholder='Event'
           onChange={({ target: { value } }) => setInputVal(value)}
-        />
+        /> */}
 
         {isLoading && <h1 className='spin'></h1>}
 
@@ -51,14 +94,14 @@ function Event(props) {
           <div className='Event' key={eventData.id}>
             <span>
               <h2>{eventData.eventName}</h2>
-              {eventData.users
+              {/* {eventData.users
                 ? eventData.users.map((user) => <h2>{user.name}</h2>)
-                : null}
-              <Dishes/>
+                : null} */}
+              <Dishes isAvailableDish={isAvailableDish} isChecked={isChecked} updateEvent={updateEventDish} />
             </span>
           </div>
 
-          {console.log(eventData)}
+          {console.log(user)}
         </div>
       </div>
       );

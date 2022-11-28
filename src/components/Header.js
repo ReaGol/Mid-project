@@ -16,7 +16,7 @@ function Header() {
             <Link to='/dishes/add'>New Dish</Link>
           </li> */}
           <li>
-            <Link to='/events'>Events</Link>
+            <Link to='/about'>About</Link>
           </li>
         </ul>
       </nav>

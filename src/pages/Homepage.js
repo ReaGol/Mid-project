@@ -5,16 +5,22 @@ import { Link } from 'react-router-dom';
 function Homepage() {
   const {user, setUser} = useContext(UserContext);
 console.log(user)
-//   const isDisabled = () => {
-// return !user.length
-//   }
+ const handleClick = () => {
+   setUser(current=>[...current, ])
+ }
 
   return (
     <>
-      <div>Homepage</div>
-      <input type="text" name="user" value={user} onChange={e => setUser(e.target.value)}></input>
+      <div>Join an event:</div>
+      <input
+        type='text'
+        name='user'
+        value={user}
+        onChange={(e) => setUser(e.target.value)}
+      ></input>
       <button disabled={!user}>
-        <Link to='/events'>Events</Link>
+        <Link to='/events'>Pick an event</Link>
+        {console.log(user)}
       </button>
     </>
   );
