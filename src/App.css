@@ -11,6 +11,23 @@
   display: flex;
   flex-direction: column;
 }
+.events_container {
+  outline: 1px solid red;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
 .dish {
   margin: 1rem;
   padding: 1rem;

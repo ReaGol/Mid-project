@@ -9,8 +9,14 @@ function Header() {
           <li>
             <Link to='/homepage'>Homepage</Link>
           </li>
-          <li>
+          {/* <li>
             <Link to='/dishes'>Dishes</Link>
+          </li> */}
+          {/* <li>
+            <Link to='/dishes/add'>New Dish</Link>
+          </li> */}
+          <li>
+            <Link to='/events'>Events</Link>
           </li>
         </ul>
       </nav>

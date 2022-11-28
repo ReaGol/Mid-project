@@ -14,6 +14,7 @@ function Dishes() {
         const { data } = await axios.get(
           "https://6374aa1608104a9c5f856b46.mockapi.io/potluck"
         );
+        console.log(data)
         setDishesArr(data);
         setIsLoading(false);
       } catch (e) {
@@ -31,12 +32,12 @@ function Dishes() {
       <h1>Foods To Bring</h1>
 
       {errorMes && <h2>{errorMes}</h2>}
-      {isLoading && <h1 className='spin'>.</h1>}
-      {setDishesArr.length && (
+      {isLoading && <h1 className='spin'></h1>}
+      {dishesArr.length && (
         <div className='dishes_container'>
           {dishesArr.map(
             ({ dish, name, category, id, image, picked }, mapIndex) => (
-              <Link to={`/Dishes/${id}`}>
+              <Link to={`/dishes/${id}`}>
                 <div className='dish' key={id}>
                   <span>
                     <h2>{name}</h2>
