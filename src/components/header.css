@@ -25,6 +25,11 @@ header {
     background-color: #f4f4f6;
 }
 
+ nav {
+  position: sticky;
+  top: 0;
+}
+
 .logo {
   cursor: pointer;
   
