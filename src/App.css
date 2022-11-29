@@ -12,16 +12,26 @@
 .container {
   object-fit: contain;
   margin: 0 auto;
+  text-align: center;
 }
 
 .dishes_container {
   display: flex;
   flex-wrap: wrap;
 }
+.add-new-dish {
+ text-align: center;
+ margin: 20px;
+}
 .events_container {
   outline: 1px solid transparent;
   display: flex;
   justify-content: center;
+  text-align: center;
+}
+
+.table-container {
+  text-align: center;
 }
 
 @media (max-width: 600px) {
@@ -76,6 +86,15 @@
   border: solid 1px grey;
   border-radius: 20px;
   box-shadow: 10px 5px 5px grey;
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 3rem;
+  color: rgb(8, 8, 8);
+  text-align: center;
+  display: inline-block;
+  text-shadow: 2px 2px 2px rgb(134, 133, 133);
 }
 
 .img {
@@ -178,22 +197,16 @@ p {
   justify-content: center;
 }
 
-h1 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 3rem;
-  color: rgb(8, 8, 8);
-  text-align: center;
-  display: inline-block;
-  text-shadow: 2px 2px 2px rgb(134, 133, 133);
-}
+
 
 h2, h4{
 text-align: center;
 } 
 
-a {
+button, a {
   text-decoration: none;
-  color: black;
+  color: white;
   font-family: inherit;
+  font-weight: 500;
 }
 

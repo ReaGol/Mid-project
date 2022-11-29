@@ -1,5 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import AddDish from "./AddDish";
 
 function Dishes(props) {
   const [dishesArr, setDishesArr] = useState([]);
@@ -27,10 +29,12 @@ function Dishes(props) {
 
   return (
     <div className='container'>
-    
-      
       {errorMes && <h2>{errorMes}</h2>}
       {isLoading && <div className='spin'></div>}
+      <span>
+        <Link to='/dishes/add'>Add New Dish</Link>
+        {/* {dish} - {picked ? "picked" : "available"} */}
+      </span>
       {dishesArr.length && (
         <div className='dishes_container'>
           {dishesArr.map(({ dish, name, id, image }, mapIndex) => (
@@ -43,13 +47,10 @@ function Dishes(props) {
                     onChange={(e) => props.updateEvent(name, e.target.checked)}
                     disabled={!props.isAvailableDish(name)}
                   ></input>
-                  {name} {props.isChecked(name) ? 'V' :  'X'}
+                  {name} {props.isChecked(name) ? "V" : "X"}
                 </h2>
               </span>
               <img className='img' src={image} alt={dish} />
-              <span>
-                {/* {dish} - {picked ? "picked" : "available"} */}
-              </span>
             </div>
             // </Link>
           ))}

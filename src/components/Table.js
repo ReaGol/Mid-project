@@ -21,7 +21,7 @@ function Table() {
   
 
   return (
-    <div>
+    <div className="table-container">
       <h1 id='title'>Summary</h1>
       <table id='users'>
         <tbody>

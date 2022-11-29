@@ -55,24 +55,24 @@ function Dish(props) {
     }
   };
 
-  // const handleDeleteDish = async (id) => {
-  //   try {
-  //     const { data } = await axios.delete(
-  //       `https://6374aa1608104a9c5f856b46.mockapi.io/potluck/${params.dishId}`
-  //     );
-  //     console.log(data);
-  //     setDishData((prevState) =>
-  //       prevState.filter((Dish) => {
-  //         return Dish.id !== data.id;
-  //       })
-  //     );
-  //   } catch (e) {
-  //     setErrorMes(e.message);
-  //     setTimeout(() => {
-  //       setErrorMes(null);
-  //     }, 1500);
-  //   }
-  // };
+  const handleDeleteDish = async (id) => {
+    try {
+      const { data } = await axios.delete(
+        `https://6374aa1608104a9c5f856b46.mockapi.io/potluck/${params.dishId}`
+      );
+      console.log(data);
+      setDishData((prevState) =>
+        prevState.filter((Dish) => {
+          return Dish.id !== data.id;
+        })
+      );
+    } catch (e) {
+      setErrorMes(e.message);
+      setTimeout(() => {
+        setErrorMes(null);
+      }, 1500);
+    }
+  };
 
   return (
     <div className='wrapper'>
@@ -105,14 +105,14 @@ function Dish(props) {
             </span>
             <img className='img' src={dishData.image} alt={dishData.name} />
             <span>
-              {/* <button
+              <button
                 className='btn-delete'
                 onClick={() => {
                   handleDeleteDish(dishData.id);
                 }}
               >
                 Delete
-              </button> */}
+              </button>
               {dishData.name} - {dishData.picked ? "picked" : "available"}
             </span>
           </div>
