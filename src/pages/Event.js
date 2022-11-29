@@ -7,8 +7,7 @@ import Dishes from "./Dishes";
 function Event(props) {
   const params = useParams();
   const [eventData, setEventData] = useState({});
-  const [inputVal, setInputVal] = useState("");
-  //   const [inputImg, setInputImg] = useState("");
+  // const [inputVal, setInputVal] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [errorMes, setErrorMes] = useState(null);
   const { user, setUser } = useContext(UserContext);
@@ -37,11 +36,11 @@ function Event(props) {
   }, [params]);
 
   // function to update event
-  const updateEventDish =async (dish, checked) => {
+  const updateEventDish = async (dish, checked) => {
      try {
       setIsLoading(true);
 const users = [...eventData.users]
-      const currentUser = users.find(u => u.name == user)
+      const currentUser = users.find(u => u.name === user)
       if (!currentUser) {
         users.push({name:user, stuff:[dish]})       
       }

@@ -116,12 +116,17 @@ button:hover {
    height: 100%;
 } */
 
+.text-container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 p {
   display: flex;
   align-self: center;
   font-size: 1.5rem;
   color: #7b736c;
-  /* text-shadow: 2px 2px 2px grey; */
   justify-content: center;
 }
 
