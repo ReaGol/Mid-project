@@ -2,8 +2,8 @@ import React from 'react'
 
 function About() {
   return (
-    <div>
-      <h1>Organizing a meeting? A potluck? A Picnic?</h1>
+    <div className='main-about'>
+      <h1>Organizing a meeting? A Picnic?</h1>
       <div className='text-container'>
         <h2>Here you can manage who brings what!</h2>
         <p>

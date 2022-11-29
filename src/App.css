@@ -2,6 +2,13 @@
   padding: 1rem;
 }
 
+.bg-image {
+  margin-top: 0;
+  padding-top: 0;
+  object-fit: cover;
+  align-self: center;
+}
+
 .container {
   object-fit: contain;
   margin: 0 auto;
@@ -13,6 +20,8 @@
 }
 .events_container {
   outline: 1px solid transparent;
+  display: flex;
+  justify-content: center;
 }
 
 @media (max-width: 600px) {
@@ -23,6 +32,7 @@
   .container {
     max-width: 620px;
     margin: 0 auto;
+    
   }
 }
 
@@ -30,6 +40,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 
 .form-actions {
@@ -37,6 +48,26 @@
   flex-direction: column;
   align-items: center;
   padding-top: 20px;
+}
+
+.input-content {
+  
+  display: flex;
+  justify-content: flex-start;
+}
+
+.input-text {
+  display: block;
+  text-align: left;
+  margin: 20px;
+  margin-top: 50px;
+  font-size: 20px;
+}
+
+.input-user {
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid black;
 }
 
 .dish {
@@ -54,9 +85,8 @@
   border: 1px solid transparent;
   border-radius: 30px;
 }
-span {
-  display: flex;
-  justify-content: space-between;
+span h2{
+  margin: 10px;
 }
 
 .spin {
@@ -88,25 +118,37 @@ span {
   }
 }
 
-.btn-delete {
+/* .btn-delete {
   cursor: pointer;
   margin-right: 50px;
   padding: 2px 4px;
   background-color: #f7b49b;
   border-radius: 5px;
   font-weight: 600;
+} */
+
+
+
+button::before {
+  margin-top: 20px;
+  cursor: pointer;
+  padding: 4px 4px;
+  font-size: 16px;
+  border-radius: 5px;
+  font-weight: 400;
 }
 
 button:hover {
   box-shadow: 5px 1px 5px rgb(137, 157, 155);
 }
 
-/* .main {
+.main {
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
-} */
+}
 
 /* img {
   
@@ -116,13 +158,19 @@ button:hover {
    height: 100%;
 } */
 
+.main-about{
+  margin-top: 20px;
+  padding-top: 10px;
+  text-align: center;
+}
 .text-container {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 20px auto;
   text-align: center;
 }
 
 p {
+  margin-top: 10px;
   display: flex;
   align-self: center;
   font-size: 1.5rem;
@@ -135,11 +183,17 @@ h1 {
   font-size: 3rem;
   color: rgb(8, 8, 8);
   text-align: center;
+  display: inline-block;
   text-shadow: 2px 2px 2px rgb(134, 133, 133);
 }
+
+h2, h4{
+text-align: center;
+} 
 
 a {
   text-decoration: none;
   color: black;
   font-family: inherit;
 }
+

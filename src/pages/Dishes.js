@@ -13,7 +13,6 @@ function Dishes(props) {
         const { data } = await axios.get(
           "https://6374aa1608104a9c5f856b46.mockapi.io/potluck"
         );
-        console.log(data)
         setDishesArr(data);
         setIsLoading(false);
       } catch (e) {
@@ -28,13 +27,13 @@ function Dishes(props) {
 
   return (
     <div className='container'>
-      <h1>Foods To Bring</h1>
-
+    
+      
       {errorMes && <h2>{errorMes}</h2>}
-      {isLoading && <h1 className='spin'></h1>}
+      {isLoading && <div className='spin'></div>}
       {dishesArr.length && (
         <div className='dishes_container'>
-          {dishesArr.map(({ dish, name, id, image, picked }, mapIndex) => (
+          {dishesArr.map(({ dish, name, id, image }, mapIndex) => (
             // <Link to={`/dishes/${id}`}>
             <div className='dish' key={id}>
               <span>
@@ -49,7 +48,7 @@ function Dishes(props) {
               </span>
               <img className='img' src={image} alt={dish} />
               <span>
-                {dish} - {picked ? "picked" : "available"}
+                {/* {dish} - {picked ? "picked" : "available"} */}
               </span>
             </div>
             // </Link>

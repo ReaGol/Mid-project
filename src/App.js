@@ -9,29 +9,18 @@ import Dishes from "./pages/Dishes";
 import Event from "./pages/Event";
 import Events from "./pages/Events";
 import Homepage from "./pages/Homepage";
-export const UserContext = createContext({ user: "Coco", setUser: () => {} });
-export const AppContext = createContext({
-  data: [{
-    eventName: "picnic",
-    users: [
-      {
-        name: "miri",
-        stuff: ["beer", "chips"],
-      },
-    ],
-    eventDate: 221223,
-    id: "1",
-  }],
-  setData: () => {},
+import Summary from "./pages/Summary";
+export const UserContext = createContext({
+  user: "Coco", setUser: () => { },
+  eventData: {}, setEventData: () => { }
 });
 
 function App() {
-  const [user, setUser] = useState("Jesse Hall");
-  const [data, setData] = useState([])
+  const [user, setUser] = useState("Jesse Hall");  
+  const [eventData, setEventData] = useState({});  
   return (
     <>
-      <UserContext.Provider value={{ user, setUser }}>
-        <AppContext.Provider value={data}>
+      <UserContext.Provider value={{ user, setUser, eventData, setEventData }}>
           <Header />
           <Routes>
             <Route path='/' exact></Route>
@@ -42,8 +31,8 @@ function App() {
             <Route path='/dishes/add' element={<AddDish />}></Route>
             <Route path='/events' element={<Events />}></Route>
             <Route path='/events/:eventId' element={<Event />}></Route>
+            <Route path='/summary' element={<Summary />}></Route>
           </Routes>
-        </AppContext.Provider>
       </UserContext.Provider>
     </>
   );

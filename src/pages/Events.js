@@ -6,7 +6,7 @@ function Events() {
   const [eventsArr, setEventsArr] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMes, setErrorMes] = useState(null);
-const {user, setUser} = useContext(UserContext);
+const {user} = useContext(UserContext);
 console.log(user);
 
   useEffect(() => {
@@ -36,7 +36,7 @@ console.log(user);
       <h1>Hello {user}! pick an event</h1>
 
       {errorMes && <h2>{errorMes}</h2>}
-      {isLoading && <h1 className='spin'></h1>}
+      {isLoading && <div className='spin'></div>}
       {console.log(eventsArr)}
       {eventsArr.length && (         
         <div className='events_container'>
@@ -46,7 +46,7 @@ console.log(user);
                 <div className='event' key={id}>
                   <span>
                     <h2>{eventName}</h2>
-                    <h2>{users.length}</h2>
+                    <h2>{users.length} participants</h2>
                   </span>
                   {/* <img className='img' src={image} alt={eventName} /> */}
                   <span>

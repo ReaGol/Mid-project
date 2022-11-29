@@ -1,6 +1,65 @@
-.header {
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+}
+
+li, a {
+  font-family: "Monserrat", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #595f61;
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+    background-color: #f4f4f6;
+}
+
+.logo {
+  cursor: pointer;
+  
+}
+ul, li {
+  list-style: none;
+}
+
+li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+nav li a {
+  transition: all 0.3s ease 0s;
+}
+
+button {
+  padding: 0 25px;
+  background-color: rgba(0, 136, 169, 1);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+  margin: 10px;
+}
+
+button:hover {
+  background-color: rgba(0, 136, 169, 0.8);
+}
+
+button a {
+  color: #f7f8fd;
+}
+/* .header {
   height: 5rem;
-  /* min-width: 669px; */
   background-color: #fc9517;
   padding: 0 10%;
 }
@@ -20,8 +79,14 @@
 }
 
 .header li {
-  margin: 0 1rem;
+  margin: 0 2rem;
   width: 5rem;
+}
+
+.logo {
+  background-color: #fc9517;
+  padding: 0;
+  width: 150px;
 }
 
 .header a {
@@ -37,4 +102,4 @@
   color: #6d6e6a;
   padding-bottom: 0.25rem;
   border-bottom: 4px solid #302f30;
-}
+} */

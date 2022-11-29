@@ -3,14 +3,15 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { UserContext } from "../App";
 import Dishes from "./Dishes";
+import Summary from "./Summary";
+import { Link } from "react-router-dom";
 
 function Event(props) {
   const params = useParams();
-  const [eventData, setEventData] = useState({});
-  // const [inputVal, setInputVal] = useState("");
+  // const [eventData, setEventData] = useState({});
   const [isLoading, setIsLoading] = useState(false);
   const [errorMes, setErrorMes] = useState(null);
-  const { user, setUser } = useContext(UserContext);
+  const { user, eventData, setEventData} = useContext(UserContext);
 
   useEffect(() => {
     console.log(params);
@@ -33,7 +34,7 @@ function Event(props) {
       }
     };
     fetchEventData();
-  }, [params]);
+  }, [setEventData]);
 
   // function to update event
   const updateEventDish = async (dish, checked) => {
@@ -87,20 +88,24 @@ const isAvailableDish = (dish) =>!eventData?.users?.filter(u => u.name !== user)
           onChange={({ target: { value } }) => setInputVal(value)}
         /> */}
 
-        {isLoading && <h1 className='spin'></h1>}
+        {isLoading && <div className='spin'></div>}
 
         <div className='events_container'>
           <div className='Event' key={eventData.id}>
-            <span>
-              <h2>{eventData.eventName}</h2>
-              {/* {eventData.users
+            <h1>{eventData.eventName}</h1>
+            <h3>On Date:{new Date(eventData.eventDate).toLocaleDateString().slice(0, 10)}</h3>
+            <h4>Foods To Bring</h4>            
+            <Link to='/summary'>To summary</Link>
+
+            {/* {eventData.users
                 ? eventData.users.map((user) => <h2>{user.name}</h2>)
                 : null} */}
-              <Dishes isAvailableDish={isAvailableDish} isChecked={isChecked} updateEvent={updateEventDish} />
-            </span>
+            <Dishes
+              isAvailableDish={isAvailableDish}
+              isChecked={isChecked}
+              updateEvent={updateEventDish}
+            />
           </div>
-
-          {console.log(user)}
         </div>
       </div>
       );
