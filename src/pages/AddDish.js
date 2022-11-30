@@ -25,7 +25,7 @@ const AddDish = (props) => {
         const { data } = await axios.post(
           "https://6374aa1608104a9c5f856b46.mockapi.io/potluck",
           {
-            dish: addNewDish,
+            name: addNewDish,
             image: dishImage,
             quantity: dishQuantity
 

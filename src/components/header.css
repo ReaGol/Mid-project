@@ -9,7 +9,7 @@
 li,
 a {
   font-family: "Monserrat", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 16px;
   color: #595f61;
   text-decoration: none;
@@ -20,7 +20,8 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 30px 10%;
-  background-color: #f4f4f6;
+  /* background-color: #f4f4f6; */
+  background-color: rgb(120, 191, 209);;
 }
 
 .header {
@@ -30,7 +31,7 @@ header {
 
 .logo {
   cursor: pointer;
-  width: 200px;
+  width: 300px;
 }
 ul,
 li {

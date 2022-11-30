@@ -8,6 +8,7 @@ import Dish from "./pages/Dish";
 import Dishes from "./pages/Dishes";
 import Event from "./pages/Event";
 import Events from "./pages/Events";
+import AddEvent from "./pages/AddEvent";
 import Homepage from "./pages/Homepage";
 import Summary from "./pages/Summary";
 export const UserContext = createContext({
@@ -30,6 +31,7 @@ function App() {
             <Route path='/dishes/:dishId' element={<Dish />}></Route>
             <Route path='/dishes/add' element={<AddDish />}></Route>
             <Route path='/events' element={<Events />}></Route>
+            <Route path='/events/add' element={<AddEvent />}></Route>
             <Route path='/events/:eventId' element={<Event />}></Route>
             <Route path='/summary' element={<Summary />}></Route>
           </Routes>

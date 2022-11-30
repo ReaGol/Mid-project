@@ -34,7 +34,9 @@ console.log(user);
   return (
     <div className='container'>
       <h1>Hello {user}! pick an event</h1>
-
+      <h2>
+        Or <Link to={"/events/add"}>Add New Event</Link>
+      </h2>
       {errorMes && <h2>{errorMes}</h2>}
       {isLoading && <div className='spin'></div>}
       {console.log(eventsArr)}

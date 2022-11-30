@@ -31,7 +31,7 @@
 .dishes_container img{
   width: 100%;
 }
-.add-new-dish {
+.add-new-dish, .add-new-event {
  text-align: center;
  margin: 20px;
 }

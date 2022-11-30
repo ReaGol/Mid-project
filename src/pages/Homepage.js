@@ -4,10 +4,12 @@ import { UserContext } from '../App';
 import { Link } from 'react-router-dom';
 function Homepage() {
   const {user, setUser} = useContext(UserContext);
-console.log(user)
+
 //  const handleClick = () => {
 //    setUser(current=>[...current, ])
 //  }
+
+//function addEvent
 
   return (
     <>
