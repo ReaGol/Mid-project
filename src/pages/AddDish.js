@@ -26,7 +26,7 @@ const AddDish = (props) => {
           "https://6374aa1608104a9c5f856b46.mockapi.io/potluck",
           {
             dish: addNewDish,
-            photo: dishImage,
+            image: dishImage,
             quantity: dishQuantity
 
           }

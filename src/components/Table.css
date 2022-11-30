@@ -39,3 +39,10 @@
 td{
    color: black; 
 }
+
+@media  (max-width: 600px) {
+  table, tbody, tr {
+  min-width: fit-content;
+}
+}
+
