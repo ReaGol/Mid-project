@@ -4,13 +4,14 @@ import "./App.css";
 import Header from "./components/Header";
 import About from "./pages/About";
 import AddDish from "./pages/AddDish";
+import AddEvent from "./pages/AddEvent";
 import Dish from "./pages/Dish";
 import Dishes from "./pages/Dishes";
 import Event from "./pages/Event";
 import Events from "./pages/Events";
-import AddEvent from "./pages/AddEvent";
 import Homepage from "./pages/Homepage";
 import Summary from "./pages/Summary";
+
 export const UserContext = createContext({
   user: "Coco", setUser: () => { },
   eventData: {}, setEventData: () => { }

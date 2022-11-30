@@ -26,14 +26,14 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 5px;
-
 }
-.dishes_container img{
+.dishes_container img {
   width: 100%;
 }
-.add-new-dish, .add-new-event {
- text-align: center;
- margin: 20px;
+.add-new-dish,
+.add-new-event {
+  text-align: center;
+  margin: 20px;
 }
 .events_container {
   outline: 1px solid transparent;
@@ -45,7 +45,7 @@
 .table-container {
   text-align: center;
 }
-.link_button{
+.link_button {
   display: inline-block;
   padding: 6px 10px;
   border: 2px solid #333;
@@ -53,11 +53,11 @@
   margin: 0 10px;
   border-radius: 10px;
 }
-.link_button:first-of-type{
+.link_button:first-of-type {
   margin-top: 20px;
 }
 
-.link_button:hover{
+.link_button:hover {
   background-color: #ddd;
   padding: 6px 10px;
   border: 2px solid #222;
@@ -67,23 +67,33 @@
   .dishes_container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
   }
   .container {
     max-width: 620px;
     margin: 0 auto;
-    
   }
   .events_container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
   }
+  img { 
+    max-width: 100%; 
+    height: auto; 
+}
+.container {
+  width: 100%;
+  object-fit: contain;
+  margin: 6px auto;
+  text-align: center;
+}
 }
 
 .form-control {
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 }
 
 .form-actions {
@@ -94,7 +104,6 @@
 }
 
 .input-content {
-  
   display: flex;
   justify-content: flex-start;
 }
@@ -120,13 +129,13 @@
   border-radius: 20px;
   box-shadow: 10px 5px 5px grey;
 }
-input[type=checkbox]{
+input[type="checkbox"] {
   height: 1.4rem;
   accent-color: green;
-    background-color: green;
-    width: 1.4rem;
+  background-color: green;
+  width: 1.4rem;
 }
-.checkbox-container{
+.checkbox-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -147,7 +156,7 @@ h1 {
   border: 1px solid transparent;
   border-radius: 30px;
 } */
-span h2{
+span h2 {
   margin: 10px;
 }
 
@@ -189,8 +198,6 @@ span h2{
   font-weight: 600;
 } */
 
-
-
 button::before {
   margin-top: 20px;
   cursor: pointer;
@@ -220,7 +227,7 @@ button:hover {
    height: 100%;
 } */
 
-.main-about{
+.main-about {
   margin-top: 20px;
   padding-top: 10px;
   text-align: center;
@@ -240,16 +247,15 @@ p {
   justify-content: center;
 }
 
+h2,
+h4 {
+  text-align: center;
+}
 
-
-h2, h4{
-text-align: center;
-} 
-
-button, a {
+button,
+a {
   text-decoration: none;
   color: white;
   font-family: inherit;
   font-weight: 500;
 }
-

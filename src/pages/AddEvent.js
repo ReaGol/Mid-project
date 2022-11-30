@@ -44,7 +44,6 @@ const AddEvent = (props) => {
             name='event'
             onChange={({ target: { value } }) => setAddNewEvent(value)}
           />{" "}
-          
         </div>
         <div className='form-actions'>
           <button>Submit</button>

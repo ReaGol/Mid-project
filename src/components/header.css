@@ -78,6 +78,18 @@ button a {
   padding: 0px 20px;
   margin: 10px;
 }
+ .header {
+   display: flex;
+   flex-direction: column;
+  height: 5rem;
+  width: 100vw;
+  padding: 0 10%;
+}
+li {
+  display: inline;
+  padding: 0px 10px;
+}
+
 }
 
 /*
