@@ -93,9 +93,14 @@ const isAvailableDish = (dish) =>!eventData?.users?.filter(u => u.name !== user)
         <div className='events_container'>
           <div className='Event' key={eventData.id}>
             <h1>{eventData.eventName}</h1>
-            <h3>On Date:{new Date(eventData.eventDate).toLocaleDateString().slice(0, 10)}</h3>
-            <h4>Foods To Bring</h4>            
-            <Link to='/summary'>To summary</Link>
+            <h3>
+              On Date:
+              {new Date(eventData.eventDate).toLocaleDateString().slice(0, 10)}
+            </h3>
+            <h4>Foods To Bring</h4>
+            <Link className='link_button' to='/summary'>
+              To summary
+            </Link>
 
             {/* {eventData.users
                 ? eventData.users.map((user) => <h2>{user.name}</h2>)

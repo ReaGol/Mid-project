@@ -38,24 +38,20 @@ console.log(user);
       {errorMes && <h2>{errorMes}</h2>}
       {isLoading && <div className='spin'></div>}
       {console.log(eventsArr)}
-      {eventsArr.length && (         
+      {eventsArr.length && (
         <div className='events_container'>
-          {eventsArr.map(
-            ({ eventName, users, id }) => (
-              <Link to={`/events/${id}`}>
-                <div className='event' key={id}>
-                  <span>
-                    <h2>{eventName}</h2>
-                    <h2>{users.length} participants</h2>
-                  </span>
-                  {/* <img className='img' src={image} alt={eventName} /> */}
-                  <span>
-                    {/* {dish} - {picked ? "picked" : "available"} */}
-                  </span>
-                </div>
-              </Link>
-            )
-          )}
+          {eventsArr.map(({ eventName, users, id }) => (
+            <Link to={`/events/${id}`}>
+              <div className='event' key={id}>
+                <span class='link_button'>
+                  <h2>{eventName}</h2>
+                  <h2>{users.length} participants</h2>
+                </span>
+                {/* <img className='img' src={image} alt={eventName} /> */}
+                <span>{/* {dish} - {picked ? "picked" : "available"} */}</span>
+              </div>
+            </Link>
+          ))}
         </div>
       )}
     </div>
